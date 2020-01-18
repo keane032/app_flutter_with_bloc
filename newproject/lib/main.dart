@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+// import 'package:flutter/services.dart';
 import 'package:newproject/src/app_widget.dart';
+import 'package:newproject/src/home/home_widget.dart';
+import 'package:newproject/src/todo/todo_list.dart';
 
 void main() {
   //Linha adicionada depois de ter dado upgrade flutter 
-  WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setEnabledSystemUIOverlays([]);
-  runApp(MyApp());
+  // WidgetsFlutterBinding.ensureInitialized();
+  // SystemChrome.setEnabledSystemUIOverlays([]);
+  runApp(MaterialApp(
+    title: 'Named Routes Demo',
+    initialRoute: "/",
+    routes: {
+      '/': (context) => MyApp(),
+      '/home': (context) => Home(),
+      'Todos': (context) => TodoList()
+    },
+  ));
 }
 
 
